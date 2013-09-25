@@ -1,11 +1,11 @@
-/* line 1, /Users/cdeliens/development/firebubble_web/source/stylesheets/application.css.sass */
+/* line 1, /Users/cdeliens/development/firebubble/source/stylesheets/application.css.sass */
 canvas {
   display: block;
-  margin: 150px auto;
+  margin: 10% auto;
   border: 1px solid lightgrey;
   width: 320px; }
 
-/* line 6, /Users/cdeliens/development/firebubble_web/source/stylesheets/application.css.sass */
+/* line 6, /Users/cdeliens/development/firebubble/source/stylesheets/application.css.sass */
 .stats {
   position: absolute;
   top: 0px;
