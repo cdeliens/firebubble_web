@@ -1,12 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:100);
-/* line 3, /Users/cdeliens/development/firebubble/source/stylesheets/application.css.sass */
+/* line 2, /Users/cdeliens/development/firebubble_web/source/stylesheets/application.css.sass */
 .stats {
-  font-family: "Raleway", sans-serif;
   position: absolute;
   top: 0px;
   left: 20px; }
 
-/* line 8, /Users/cdeliens/development/firebubble/source/stylesheets/application.css.sass */
+/* line 6, /Users/cdeliens/development/firebubble_web/source/stylesheets/application.css.sass */
 #main {
   border: 1px solid lightgrey;
   width: 320px;

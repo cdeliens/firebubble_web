@@ -6010,17 +6010,16 @@ var Backbone = Backbone || {};
     angularFire(ref_bubble, $scope, "bubble");
     printBubble = function() {
       var circle;
-      two.clear();
       circle = two.makeCircle($scope.bubble.x, $scope.bubble.y, 25);
       circle.fill = "#FF8000";
       circle.opacity = 0.20;
       circle.stroke = 'orangered';
-      circle.linewidth = 5;
-      return two.update();
+      return circle.linewidth = 5;
     };
-    return setInterval((function() {
+    return two.bind("update", function(frameCount) {
+      two.clear();
       return printBubble();
-    }), 1000);
+    }).play();
   };
 
 }).call(this);
