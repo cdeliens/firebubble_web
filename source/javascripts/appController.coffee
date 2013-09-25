@@ -11,14 +11,14 @@ app = angular.module("fireBubbleApp", ['firebase'])
   angularFire(ref_bubble, $scope, "bubble")
 
   printBubble = () ->
-    two.clear()
     circle = two.makeCircle($scope.bubble.x, $scope.bubble.y, 25)
     circle.fill = "#FF8000"
     circle.opacity = 0.20
     circle.stroke = 'orangered'
     circle.linewidth = 5
-    two.update()
 
-  setInterval (->
+
+  two.bind("update", (frameCount) -> # Finally, start the animati
+    two.clear()
     printBubble()
-  ), 1000
+  ).play()
