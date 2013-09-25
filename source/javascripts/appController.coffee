@@ -1,7 +1,24 @@
 app = angular.module("fireBubbleApp", ['firebase'])
+@AppCtrl = ($scope, angularFire, angularFireCollection) ->
+  el = document.getElementById("main")
+  two = new Two(width: 320, height: 470)
+  two.appendTo el
 
-@AppCtrl = ($scope, angularFire) ->
-  $scope.bubble = "Hola"
+  ref = new Firebase('https://25este.firebaseio.com/')
+  ref_bubble = new Firebase('https://25este.firebaseio.com/bubble')
+  $scope.bubble
+  
+  angularFire(ref_bubble, $scope, "bubble")
 
-  ref = new Firebase('https://25este.firebaseio.com/bubble');
-  angularFire(ref, $scope, 'bubble');
+  printBubble = () ->
+    two.clear()
+    circle = two.makeCircle($scope.bubble.x, $scope.bubble.y, 25)
+    circle.fill = "#FF8000"
+    circle.opacity = 0.20
+    circle.stroke = 'orangered'
+    circle.linewidth = 5
+    two.update()
+
+  setInterval (->
+    printBubble()
+  ), 1000
