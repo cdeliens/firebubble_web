@@ -3,9 +3,10 @@ canvas {
   display: block;
   margin: 10% auto;
   border: 1px solid lightgrey;
-  width: 320px; }
+  width: 320px;
+  position: relative; }
 
-/* line 6, /Users/cdeliens/development/firebubble/source/stylesheets/application.css.sass */
+/* line 7, /Users/cdeliens/development/firebubble/source/stylesheets/application.css.sass */
 .stats {
   position: absolute;
   top: 0px;

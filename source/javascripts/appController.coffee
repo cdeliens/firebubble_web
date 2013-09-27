@@ -1,10 +1,12 @@
 app = angular.module("fireBubbleApp", ['firebase'])
 @AppCtrl = ($scope, angularFire, angularFireCollection) ->
   canvas = document.getElementById("main")
-  ctx= canvas.getContext("2d");
+  ctx= canvas.getContext("2d")
+  
+  
 
   firebase_ref = new Firebase('https://25este.firebaseio.com/bubble')
-  angularFire(ref_bubble, $scope, "bubble")
+  angularFire(firebase_ref, $scope, "bubble")
 
   firebase_ref.on 'value', (dataSnapshot) ->
     printBubble()
@@ -15,4 +17,7 @@ app = angular.module("fireBubbleApp", ['firebase'])
     ctx.arc $scope.bubble.x, $scope.bubble.y, 30, 0, 2*Math.PI
     ctx.stroke()
 
+  $(canvas).mousemove (el) ->
+    firebase_ref.set {x: el.offsetX, y: el.offsetY}
+    printBubble()
 
